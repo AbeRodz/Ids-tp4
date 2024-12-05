@@ -44,15 +44,13 @@ SPDX-License-Identifier: MIT
 /* === Public function implementation ========================================================== */
 
 void hal_gpio_set_direction(uint8_t port, uint8_t bit, bool output) {
-    ;
 }
 
 void hal_gpio_set_output(uint8_t port, uint8_t bit, bool active) {
-    ;
 }
 
 bool hal_gpio_get_input(uint8_t port, uint8_t bit) {
-    ;
+    return false;
 }
 
 /* === End of documentation ==================================================================== */
