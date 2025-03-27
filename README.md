@@ -1,4 +1,4 @@
-# Trabajo Práctico Número 4
+# Trabajo Práctico Número II
 
 ## Uso del repositorio
 
@@ -24,6 +24,16 @@ Para `compilar` el proyecto se utiliza el siguiente comando:
 ```
 make all
 ```
+
+## Tests implementados 
+
+- Después de la inicialización todos los LEDs deben quedar apagados.
+- Se puede prender un LED individual.
+- Se puede apagar un LED individual.
+- Se pueden prender y apagar múltiples LED’s.
+- Se pueden prender todos los LEDs de una vez.
+- Se pueden apagar todos los LEDs de una vez.
+- Se puede consultar el estado de un LED
 
 ## License
 

@@ -1,5 +1,5 @@
 /************************************************************************************************
-Copyright (c) 2024, Abraham Rodriguez <abraham.rodz17@gmail.com>
+Copyright (c) 2025, Abraham Rodriguez <abraham.rodz17@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
 associated documentation files (the "Software"), to deal in the Software without restriction,
@@ -19,16 +19,17 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 SPDX-License-Identifier: MIT
 *************************************************************************************************/
 
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef LEDS_H
+#define LEDS_H
 
-/** @file main.h
- ** @brief HAL definitions.
+#include <stdint.h>
+#include <stdbool.h>
+/** @file leds.h
+ ** @brief led control function definitions
  **/
 
 /* === Headers files inclusions ================================================================ */
-#include <stdint.h>
-#include <stdbool.h>
+
 /* === Cabecera C++ ============================================================================ */
 
 #ifdef __cplusplus
@@ -43,16 +44,55 @@ extern "C" {
 
 /* === Public function declarations ============================================================ */
 
-void hal_gpio_set_direction(uint8_t port, uint8_t bit, bool output);
 
-void hal_gpio_set_output(uint8_t port, uint8_t bit, bool active);
+/**
+ * @brief Initiates led
+ *
+ * @param leds Pointer to GPIO port designated to leds.
+ */
+void LedsInit(uint16_t *leds);
 
-bool hal_gpio_get_input(uint8_t port, uint8_t bit);
 
+/**
+ * @brief Function to turn a selected LED ON
+ * 
+ * @param led selected LED to turn ON
+ * 
+ */
+void LedTurnOnSingle(uint8_t led);
+
+/**
+ * @brief Function to turn a selected LED OFF
+ * 
+ * @param led selected LED to turn OFF
+ * 
+ */
+void LedTurnOffSingle(uint8_t led);
+
+/**
+ * @brief Function to turn all LEDs OFF
+ * 
+ */
+void LedsTurnOffAll();
+
+/**
+ * @brief Function to turn all LEDs ON
+ * 
+ */
+void LedsTurnOnAll();
+
+/**
+ * @brief Function to check whether LED ON/OFF
+ * 
+ * @param led selected LED to check
+ * 
+ * @return bool true only if LED is on
+ */
+bool isLedOn(uint8_t led);
 /* === End of documentation ==================================================================== */
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* MAIN_H */
+#endif /* LEDS_H */
